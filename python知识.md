@@ -611,11 +611,13 @@ def test(name):
 `wrapt` 模块是一个专门帮助你编写装饰器的工具库
 
 ```python
+import wrapt
+import random
 def get_random(n, m):
     @wrapt.decorator
     def wrap(func, instance, args, kwargs):
         # 参数含义：
-        # - wrapped：被装饰的函数或类方法
+        # - func：被装饰的函数或类方法
         # - instance：
         #   - 如果被装饰者为普通类方法，该值为类实例
         #   - 如果被装饰者为 classmethod 类方法，该值为类
